@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@media screen and (min-width:762px) and (max-width:1281px) {
+body{
+    background-color:violet;
+}
+}
