@@ -1,0 +1,151 @@
+/* .hero-lopez {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-image: url(../images/sj-041.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+main {
+    grid-auto-rows:minmax(400px, auto);
+    grid-template-areas:
+    "first second sidebar"
+    "first kaiser sidebar"
+    "first last last"
+    "bottom1 bottom1 bottom2"
+}
+
+.item1 {
+    grid-area:first;
+    height: 100%;
+    background-image: url(../images/sj-063.jpg);
+}
+
+.item2 {
+    grid-area: second;
+
+}
+
+.pic2 {
+    background-image: url(../images/sj-030.jpg;)
+}
+.pic4 {
+    background-image: url(../images/sj-057.jpg;)
+}
+.pic4 {
+    background-image: url(../images/sj-026.jpg;)
+}
+
+.item3 {
+    grid-area: sidebar;
+    height:100%;
+}
+.item4 {
+    grid-area: kaiser;
+}
+
+.item5{
+    grid-area:last;
+}
+
+.item6{
+    grid-area:bottom1;
+}
+.item7 {
+    grid-area:bottom2;
+} */
+
+:root {
+    --blue: #11467d;
+    --green: #4c7335;
+    --white: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--blue);
+}
+
+body, header, main, footer, section, article, aside {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+main, header, nav ul, footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+main {
+    grid-auto-rows: minmax(400px, auto);
+    grid-template-areas:
+        "first second sidebar"
+        "first kaiser sidebar"
+        "first last last"
+        "bottom1 bottom1 bottom2";
+}
+
+main section {
+    border: solid var(--white) 1px;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-lopez {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-image: url(../images/sj-041.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+.item1 {
+    grid-area: first;
+    height: 100%;
+    background-image: url(../images/sj-063.jpg);
+}
+
+.item2 {
+    grid-area: second;
+}
+
+.pic2 {
+    background-image: url(../images/sj-030.jpg);
+}
+
+.pic4 {
+    background-image: url(../images/sj-057.jpg);
+}
+
+.pic6 {
+    background-image: url(../images/sj-026.jpg);
+}
+
+.item3 {
+    grid-area: sidebar;
+    height: 100%;
+}
+
+.item4 {
+    grid-area: kaiser;
+}
+
+.item5 {
+    grid-area: last;
+}
+
+.item6 {
+    grid-area: bottom1;
+}
+
+.item7 {
+    grid-area: bottom2;
+}
+
+.item8 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

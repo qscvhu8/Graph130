@@ -1,0 +1,43 @@
+@media screen and (max-width:768px) {
+    main, footer, header, nav.island {
+        display:block;
+        width:90%;
+    }
+    main article, main ul {
+        width: 90%;
+    }
+    h1 {
+        font-size:2em;
+    }
+    h2 {
+        font-size:1.3em;
+    }
+
+    /* below is the media quarie for fluid dimention */
+
+    .pure-g {
+        flex-flow: column;
+    }
+    body.fluid {
+        padding:10px;
+    }
+    .pure-u-1-3, .pure-u-2-3, .pure-u-1-5 {
+        width:100%;
+    }
+    .hero p{
+        width:100vw;
+    }
+    .zoe {
+        width:100px;
+    }
+    body.fluid.main {
+        width:100%
+    }
+
+    /* stew recipe and history */
+    .stew-content img, .stew-content, body.history img{
+        width:90%
+    }
+
+    
+}
