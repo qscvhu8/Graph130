@@ -2,6 +2,7 @@
     main, footer, header, nav.island {
         display:block;
         width:90%;
+        margin:auto;
     }
     main article, main ul {
         width: 90%;
