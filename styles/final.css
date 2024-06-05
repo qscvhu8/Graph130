@@ -5,8 +5,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --max-font-size:30px;
+}
+
 html, body {
     width: 100%;
+    height: 100%; /* Ensure the html and body elements are 100% height */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -15,13 +20,28 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-end; /* Align items to the top */
+    position: relative; /* Ensure the body is the reference point for absolute positioning */
     min-height: 3000px; /* Set the minimum height to match the image height */
 }
 
+.transparent-block img {
+    height: 1000px;
+    padding-top: 100px;
+    z-index: 4; /* Ensure the square appears above other elements */
+    position:absolute;
+}
+
 .container {
-    position: relative; /* Add position relative */
-    z-index: 1; /* Ensure the container is above other elements */
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    position: relative;
+    z-index: 4; /* Ensure the container is above other elements */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to the bottom */
+    height: 2500px; /* Ensure the container takes up the full height */
 }
 
 .content {
@@ -30,33 +50,38 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between; /* Push content to the bottom */
+    height: 100%;
 }
 
 .circle-text {
-    width: 30vw; /* Use viewport width to make it responsive */
-    height: 30vw; /* Ensure the height matches the width */
-    max-width: 200px; /* Maximum size */
-    max-height: 200px; /* Maximum size */
+    width: 50vw; /* Use viewport width to make it responsive */
+    height: 50vw; /* Ensure the height matches the width */
+    max-width: 400px; /* Maximum size */
+    max-height: 400px; /* Maximum size */
+    padding: 40px 30px; /* Add padding to ensure text is not cut off */
     background-color: rgba(0, 123, 255, 0.8);
     color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:start;
     text-align: center;
-    padding: 10px;
-    margin: 20px 0;
-    font-size: 1.5vw; /* Use viewport width for responsive font size */
-    line-height: 1.2;
+    margin: 10px 0; /* Reduce margin to ensure alignment at bottom */
+    font-size: 3vw; /* Use viewport width for responsive font size */
+    line-height: 1.3; /* Adjust line-height for better vertical spacing */
     box-sizing: border-box;
-    overflow: hidden;
+    overflow:auto;
     word-wrap: break-word;
+    offset-position:-10px;
+        justify-content:flex-end;
 }
 
-.circle-text p {
-    margin: 0;
-    padding: 0;
-}
+/* .circle-text p {
+    margin: 10px 0px;
+    padding: 10px 0px;
+
+} */
 
 .circle-text:nth-child(even) {
     align-self: flex-end;
@@ -67,13 +92,13 @@ body {
 }
 
 /* Optional media query for smaller screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .circle-text {
         width: 50vw;
         height: 50vw;
         font-size: 3vw;
     }
-}
+} */
 
 /* Layered Background Images */
 .brain-background-white, .brain-background-blue {
@@ -82,13 +107,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: 963px; /* Ensure the background scales to the width of the viewport */
+    background-size: cover; /* Ensure the background covers the entire viewport */
     background-repeat: no-repeat; /* Ensure background images don't repeat */
-    background-position: top center; /* Positioning of each background image */
+    background-position: center; /* Center the background images */
 }
 
 .brain-background-white {
     background-image: url(../images/brain-body-white.png);
+    background-color: black;
     z-index: 1; /* Make sure the white background appears below */
 }
 
@@ -97,3 +123,15 @@ body {
     z-index: 2; /* Higher z-index for the blue background */
 }
 
+@media screen and (min-width:962px) {
+    .brain-background-blue, .brain-background-white {
+        background-size: contain
+    
+}}
+
+@media screen and (min-width:970px) {
+    .circle-text, .circle-text-alpha {
+        font-size:var(--max-font-size);
+        
+    }
+}
