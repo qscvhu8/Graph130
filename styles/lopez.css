@@ -1,4 +1,4 @@
-/* .hero-lopez {
+.hero-lopez {
     grid-column-start: 1;
     grid-column-end: 4;
     background-image: url(../images/sj-041.jpg);
@@ -32,7 +32,7 @@ main {
     background-image: url(../images/sj-030.jpg;)
 }
 .pic4 {
-    background-image: url(../images/sj-057.jpg;)
+    background-image: url(../images/sj-026.jpg;)
 }
 .pic4 {
     background-image: url(../images/sj-026.jpg;)
@@ -55,7 +55,7 @@ main {
 }
 .item7 {
     grid-area:bottom2;
-} */
+}
 
 :root {
     --blue: #11467d;
@@ -119,6 +119,8 @@ main section {
 .pic4 {
     background-image: url(../images/sj-057.jpg);
 }
+
+.item4
 
 .pic6 {
     background-image: url(../images/sj-026.jpg);
