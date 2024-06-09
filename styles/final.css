@@ -6,7 +6,7 @@
 }
 
 :root {
-    --max-font-size:30px;
+    --max-font-size: 30px;
 }
 
 html, body {
@@ -29,7 +29,7 @@ body {
     height: 1000px;
     padding-top: 100px;
     z-index: 4; /* Ensure the square appears above other elements */
-    position:absolute;
+    position: absolute;
 }
 
 .container {
@@ -41,7 +41,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* Align content to the bottom */
-    height: 2500px; /* Ensure the container takes up the full height */
+    height: 2300px; /* Ensure the container takes up the full height */
+    margin-bottom: 200px;
+    /* overflow: hidden; */
 }
 
 .content {
@@ -52,6 +54,9 @@ body {
     align-items: center;
     justify-content: space-between; /* Push content to the bottom */
     height: 100%;
+    width: 90%;
+    max-width: 80%;
+    margin-left: 10%;
 }
 
 .circle-text {
@@ -65,23 +70,39 @@ body {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items:start;
+    align-items: start;
     text-align: center;
     margin: 10px 0; /* Reduce margin to ensure alignment at bottom */
     font-size: 3vw; /* Use viewport width for responsive font size */
     line-height: 1.3; /* Adjust line-height for better vertical spacing */
     box-sizing: border-box;
-    overflow:auto;
+    overflow: auto;
     word-wrap: break-word;
-    offset-position:-10px;
-        justify-content:flex-end;
+    offset-position: -10px;
+    justify-content: flex-end;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+    /* Apply rising and then bobbing animation */
+    animation: rise 1s ease-out forwards, bobbing 2s ease-in-out infinite alternate 1s; /* Start bobbing after rising */
 }
 
-/* .circle-text p {
-    margin: 10px 0px;
-    padding: 10px 0px;
+@keyframes rise {
+    from {
+        transform: translateY(100vh); /* Start from the bottom of the viewport */
+    }
+    to {
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+@keyframes bobbing {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    100% {
+        transform: translateY(-20px); /* End position */
+    }
+}
 
-} */
 
 .circle-text:nth-child(even) {
     align-self: flex-end;
@@ -90,6 +111,7 @@ body {
 .circle-text:nth-child(odd) {
     align-self: flex-start;
 }
+
 
 /* Optional media query for smaller screens */
 /* @media (max-width: 768px) {
@@ -118,20 +140,69 @@ body {
     z-index: 1; /* Make sure the white background appears below */
 }
 
-.brain-background-blue {
-    background-image: url(../images/brain-body-blue.png);
-    z-index: 2; /* Higher z-index for the blue background */
+.submarine {
+    position: absolute;
+    top: 1500px; /* Adjust as needed */
+    left: 600px; /* Start off-screen */
+    z-index: 1; /* Ensures it is above other elements */
+    animation: moveSubmarine 10s linear infinite; /* Apply animation */
 }
 
-@media screen and (min-width:962px) {
-    .brain-background-blue, .brain-background-white {
-        background-size: contain
-    
-}}
+.submarine img{
+    height:50%;
+    width: auto;
+}
 
-@media screen and (min-width:970px) {
+@keyframes moveSubmarine {
+    0% {
+        left: -450px; /* Start position off the left edge */
+    }
+    100% {
+        left: 100%; /* End position off the right edge */
+    }
+}
+
+.brain-iceberg {
+    position: absolute;
+    z-index: 3;
+}
+
+.brain-iceberg img {
+    height: 2850px;
+    width: auto;
+}
+
+.black-background {
+    position: absolute;
+    z-index:3;
+}
+
+.black-background img {
+    height:3000px;
+    width:auto;
+}
+
+.scooba-diver {
+    position: absolute;
+    z-index:2;
+    height:10%;
+    width:auto;
+}
+
+
+.brain-background-blue {
+    background-image: url(../images/brain-body-blue.png);
+    z-index: 3; /* Higher z-index for the blue background */
+}
+
+@media screen and (min-width: 962px) {
+    .brain-background-blue, .brain-background-white {
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 970px) {
     .circle-text, .circle-text-alpha {
-        font-size:var(--max-font-size);
-        
+        font-size: var(--max-font-size);
     }
 }

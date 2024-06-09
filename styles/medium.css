@@ -1,0 +1,40 @@
+body{
+    background-image: url(../images/background2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container{
+    width:100%;
+
+}
+
+.content{
+    box-sizing: border-box;
+    padding-left: .8em;
+    width:60%;
+    float:left;
+    background-color: rgba(255,255,255,.8);
+}
+
+.sidebar{
+    float:right;
+    width:37%;
+    padding-bottom: 0.6em;
+}
+
+nav li{
+    display: inline-block;
+}
+
+nav a, nav a:link, nav a:visited{
+    padding:1em;
+    display: inline-block;
+    width:100%;
+    border:1px solid #44a5b5;
+}
+
+nav ul{
+    padding:1.1em;
+    margin-top:.7em;
+}
